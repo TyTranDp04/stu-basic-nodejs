@@ -1,12 +1,12 @@
 import mongoose from 'mongoose';
 import { Helper } from '../helper/index.js';
 import { DpRoadSchema } from '../schemas/dproad.js';
-import { dpRoadService } from '../services/dproad.js';
+import { DpRoadService } from '../services/dproad.js';
 
-export const dpRoadController = {
+export const DpRoadController = {
 
   get(request, response) {
-    dpRoadService.get()
+    DpRoadService.get()
       .then((data) => {
         Helper.responseJsonHandler(data, null, response)
       }).catch((error) => {
@@ -15,7 +15,7 @@ export const dpRoadController = {
   },
 
   create(request, response) {
-    dpRoadService.create({
+    DpRoadService.create({
       _id: mongoose.Types.ObjectId(),
       number: request.body.number,
       desc: request.body.desc,
@@ -30,7 +30,7 @@ export const dpRoadController = {
   update(request, response) {
     const id = request.params;
     const updateObj = request.body;
-    dpRoadService.update({ _id: id }, { $set: updateObj })
+    DpRoadService.update({ _id: id }, { $set: updateObj })
       .then((data) => {
         Helper.responseJsonHandler(data, null, response)
       }).catch((error) => {

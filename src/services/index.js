@@ -1,1 +1,1 @@
-export { dpRoadService } from '../services/dproad.js';
+export { DpRoadService } from '../services/dproad.js';

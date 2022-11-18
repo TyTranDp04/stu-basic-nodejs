@@ -1,7 +1,7 @@
 import { errors } from '../helper/errors.js';
 import { DpRoadSchema } from '../schemas/dproad.js';
 
-export const dpRoadDatabase = {
+export const DpRoadDatabase = {
 
   get() {
     return new Promise((resolve, reject) => {

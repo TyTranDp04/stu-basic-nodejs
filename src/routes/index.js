@@ -1,12 +1,12 @@
 import express from "express"
-import {dpRoadController} from '../controllers/dproad.js'
+import {DpRoadController} from '../controllers/dproad.js'
 
 const router = express.Router();
 
-router.get("/api/dproads", dpRoadController.get);
-router.post("/api/dproads", dpRoadController.create);
-router.patch("/api/dproads/:_id", dpRoadController.update);
-router.delete("/api/dproads/:_id", dpRoadController.delete);
-router.get("/api/dproads/:_id", dpRoadController.restore);
+router.get("/api/dproads", DpRoadController.get);
+router.post("/api/dproads", DpRoadController.create);
+router.patch("/api/dproads/:_id", DpRoadController.update);
+router.delete("/api/dproads/:_id", DpRoadController.delete);
+router.get("/api/dproads/:_id", DpRoadController.restore);
 
 export default router;

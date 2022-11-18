@@ -1,10 +1,10 @@
-import { dpRoadDatabase } from '../database/dproad.js';
+import { DpRoadDatabase } from '../database/dproad.js';
 
-export const dpRoadService = {
+export const DpRoadService = {
 
   get() {
     return new Promise((resolve, reject) => {
-      dpRoadDatabase.get()
+      DpRoadDatabase.get()
         .then((response) => {
           resolve({
             statusCode: 200,
@@ -22,7 +22,7 @@ export const dpRoadService = {
   create(body) {
     let newPostObj = body;
     return new Promise((resolve, reject) => {
-      dpRoadDatabase.create(newPostObj)
+      DpRoadDatabase.create(newPostObj)
         .then((response) => {
           resolve({
             statusCode: 200,
@@ -47,7 +47,7 @@ export const dpRoadService = {
       const _id = param._id;
       //  document id and obj is required
       if (_id && obj) {
-        dpRoadDatabase.update(_id, obj)
+        DpRoadDatabase.update(_id, obj)
           .then((response) => {
             resolve({
               statusCode: 200,
@@ -62,5 +62,5 @@ export const dpRoadService = {
       }
     })
   }
-  
+
 }
